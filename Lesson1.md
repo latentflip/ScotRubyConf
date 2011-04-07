@@ -108,11 +108,87 @@
 
 - A block is a language level thing (c-level) that we have little access to except yield
 - Might be useful to capture it as an object to use it later
-- 
+
+    def show_block_param(&x)
+      puts x.inspect
+      x.call
+      yield
+    end
+
+    show_block_param { puts "in block" }
+
+    #=> <Proc:0x...>
+
+- Proc's don't care if their arguments are missing, or too many
+    
+    def yield_it(&x)
+      x.call
+      x.call(123, 234, 345)
+    end
+
+    yield_it {|thing| puts "Got a #{thing}"}
+    
+    #=> Got a  #thing is nil
+    #=> Got a 123 #extra args ignored
+
+#Lamda, proc, Proc.new
+
+- (Mostly) synonymous
+- lambda is much the same as
+
+    def my_lambda(&block)
+      block
+    end
+
+- 1.8: _proc_ and _lambda_ are synonyms
+- 1.9: _proc_ and _Proc.new_ are synonyms
+
+# lambda != Proc.new
+
+    Proc.new {|a,b|}.call(1,2,3) #OK
+    Proc.new {|a,b|}.call(1) #OK
+
+    lambda {|a,b|}.call(1) #=> wrong number of arguments
+
+- use lambda all the time, unless you know why Proc.new
+- never use Proc.new
 
 
+# 1.8 block args act like assignment, not 1.9 :(
 
+    class Person
+      attr_accessor :age
+    end
 
+    chad = Person.new
+    chad.age = 99 #=> converted to chad.age=(99) 'calls the age=() method'
+    p chad
 
+    3.times {|a| puts a}    #=> assigns to a local _a_
+    3.times{|@a| puts @a}   #=> assigns to @a, which hangs around
 
+    #in 1.8 can do
 
+    str = 'wibble'
+    def str.x=(pos)
+      self[pos,1] = "X"
+    end
+
+    3.times {|str.x| puts str}
+    
+    #=> Does a syntactical trick like str.x => str.x=()
+
+    #=> Xibble
+    #=> XXbble
+    #=> XXXble
+
+# Bindings/Closures
+
+- Encapsulate the context at a point of execution
+- The context is:
+  - Accessiblity of local variables / method params
+  - Value of self
+  - Instance variables
+  - Any associated block
+  - the _return_ stack
+- Does not simply record the then-current values of these things: keeps full context
