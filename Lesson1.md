@@ -192,3 +192,50 @@
   - Any associated block
   - the _return_ stack
 - Does not simply record the then-current values of these things: keeps full context
+
+    class A 
+      attr_writer :ivar
+      def initialize
+        @ivar = 123
+      end
+      def get_a_binding_thing
+        lvar = "lvar"
+        binding
+      end
+    end
+
+    a = A.new
+    bind = a.get_binding { "block value" }
+    eval "puts lvar", bind                  #=> lvar
+    eval "puts @ivar", bind                 #=> 123
+
+    a.ivar = "new value"
+    eval "puts @ivar", bind                 #=> new value
+    eval "puts yield", bind                 #=> block value
+    eval "puts self", bind                  #=> <A:0x...>
+
+- Would we ever do this?
+
+
+# Closures
+
+- Blocks carry with them the binding in which they are created
+
+    def block_in_sandbox(param)
+      lvar = "local variable"
+      lambda do
+        puts "param = #{param}"
+        puts "lvar = #{lvar}"
+      end
+    end
+    
+    block = block_in_sandbox(99)
+    block.call
+
+    #=> 'param = 99'
+    #=> 'lvar = local variable'
+
+
+# DSLs
+- Object Oriented API under-the-hood
+- Build up an object graph with a block-based DSL
