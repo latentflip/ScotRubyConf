@@ -34,4 +34,27 @@
 - share publicly
 - expand to weekly, monthly
 
+## 5/5
+- So easy, yet so complicated
+  - What items should go on the list
+  - Hard to figure out the right size
+- Keep them short
+- Sense of accomplishment
+
+- *Look ma, no todo list!*
+
+# CoffeeScript & Rails
+
+- If you are not TDDing your Javascript, do that first (Jasmine)
+- CoffeeScript is lovely
+  - better syntax for javascript
+- RedCar?
+- Backbone.js
+  - Lightweight MVC framework for JS
+  - Just enough of a framework and no more
+  - Refactor jQuery into a backbone view
+
+- Handlebars is awesome
+
+# @subblue on Fractals
 
