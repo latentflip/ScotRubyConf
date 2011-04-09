@@ -22,15 +22,15 @@
 
 ### Active Record
 
-  "An object that wraps a row in a db table or view, encapsulatese the db access, and adds _domain_ logic on the data"
+> An object that wraps a row in a db table or view, encapsulatese the db access, and adds _domain_ logic on the data
 
 - In a way this defies the Single Responsibility Principle
   - Works in the application domain
   - But you can also reach into the database
 
-### Domain Modek
+### Domain Model
 
-  "An object model of the domain that incorporates both behaviour and data."
+> An object model of the domain that incorporates both behaviour and data.
 
     Appointment.book_on(date)
 
