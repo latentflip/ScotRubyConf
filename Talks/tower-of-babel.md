@@ -65,7 +65,7 @@
 
 ## Cucumber
 
-- Wrong
+### Wrong
     
     Given I am on '/calendar'
     And I click ...
@@ -73,14 +73,14 @@
     And I click ...
     Then ...
 
-- Better
+### Better
 
-      Given I am a forgetful person
-      When I create a new event on my calendar
-      Then my event should appear in my calendar
+    Given I am a forgetful person
+    When I create a new event on my calendar
+    Then my event should appear in my calendar
 
-  - Not focussing on technology
-  - Focussing on the language of the customer
+- Not focussing on technology
+- Focussing on the language of the customer
 
 ## Finally
 - Don't expose ActiveRecord
