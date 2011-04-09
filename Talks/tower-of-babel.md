@@ -83,6 +83,8 @@
 ## Finally
 - Don't expose ActiveRecord
 - Talk & listen to your customers
+- Cucumber: not a testing framework, but a documentation framework
+  > I am writing documentation to my customer, and if that is executable, then that is a win
 
 ## More Reading
 - Read Dan North's blog posts about Cucumber
