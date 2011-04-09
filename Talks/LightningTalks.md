@@ -44,7 +44,6 @@
 - *Look ma, no todo list!*
 
 # CoffeeScript & Rails
-
 - If you are not TDDing your Javascript, do that first (Jasmine)
 - CoffeeScript is lovely
   - better syntax for javascript
@@ -57,4 +56,15 @@
 - Handlebars is awesome
 
 # @subblue on Fractals
+
+# Dice
+- Ragel
+  - Used for designing a language
+
+# KidsRuby
+- 
+
+# Social Robots
+
+
 
