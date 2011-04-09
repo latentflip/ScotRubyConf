@@ -22,7 +22,7 @@
 
 ### Active Record
 
-> An object that wraps a row in a db table or view, encapsulatese the db access, and adds _domain_ logic on the data
+> "An object that wraps a row in a db table or view, encapsulatese the db access, and adds _domain_ logic on the data."
 
 - In a way this defies the Single Responsibility Principle
   - Works in the application domain
@@ -30,7 +30,7 @@
 
 ### Domain Model
 
-> An object model of the domain that incorporates both behaviour and data.
+> "An object model of the domain that incorporates both behaviour and data."
 
     Appointment.book_on(date)
 
@@ -61,7 +61,7 @@
 - Keep communicating with your customers, keep talking, keep taking notes
 - Get into their world
 
-###  In order to solve a problem, I need to understand it pretty well, no matter how good I am at solving problems
+> "In order to solve a problem, I need to understand it pretty well, no matter how good I am at solving problems."
 
 ## Cucumber
 
