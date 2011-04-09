@@ -66,6 +66,7 @@
 ## Cucumber
 
 - Wrong
+    l
     Given I am on '/calendar'
     And I click ...
     And I fill in ...
@@ -73,6 +74,7 @@
     Then ...
 
 - Better
+
     Given I am a forgetful person
     When I create a new event on my calendar
     Then my event should appear in my calendar
