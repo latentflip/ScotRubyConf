@@ -83,3 +83,6 @@
 ## Finally
 - Don't expose ActiveRecord
 - Talk & listen to your customers
+
+## More Reading
+- Read Dan North's blog posts about Cucumber
